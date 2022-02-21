@@ -8,19 +8,19 @@
 # CONTRACT WITH IBM CORPORATION
 ################################################################
 
-TSOUSER=
-PASSWORD=
-HOSTNAME=                              # z/OS host name
-RSEPORT=                               # rse api port
+TSOUSER=IBMUSER
+PASSWORD=SYS1
+HOSTNAME=169.63.249.33                              # z/OS host name
+RSEPORT=32362                             # rse api port
 RSEPROFILE=rseapi-profile              # rse profile name
-ZOSMFPORT=                             # z/OSMF api port
+ZOSMFPORT=32209                             # z/OSMF api port
 ZOSMFPROFILE=zosmf-profile             # z/OSMF profile name
-SSHPORT=                               # ssh port
+SSHPORT=32722                               # ssh port
 SSHPROFILE=ssh-profile                 # ssh profile name
 
 echo "Creating RSE profile and setting as default..."
 set -x
-zowe profiles create rse-profile ${RSEPROFILE} --host ${HOSTNAME} --port ${RSEPORT} --user ${TSOUSER} --pass ${PASSWORD} --bp rseapi --protocol https --reject-unauthorized false --ow
+zowe profiles create rse-profile ${RSEPROFILE} --host ${HOSTNAME} --port ${RSEPORT} --user ${TSOUSER} --pass ${PASSWORD} --bp rseapi --protocol https --reject-unauthorized false --ow --encoding IBM-1047
 zowe profiles set rse ${RSEPROFILE}
 set +x
 

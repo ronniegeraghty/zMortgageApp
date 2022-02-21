@@ -11,4 +11,3 @@ Sample zMortgageApp for work with zDevOps. This repo is based of the zAppBuild F
 ├── src                         #Source Code for Mortgage App
 └── zowe                        #Set of scripts that utilize the zowe-cli
 ```
-test
